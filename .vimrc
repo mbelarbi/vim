@@ -7,8 +7,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
-
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
@@ -34,8 +32,6 @@ filetype plugin indent on    " required
 " Map the leader to ','
 let mapleader = ","
 let g:mapleader = ","
-
-
 
 " Sets how many lines of history VIM has to remember
 set history=500
@@ -117,7 +113,6 @@ if has("gui_macvim")
     autocmd GUIEnter * set vb t_vb=
 endif
 
-
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
@@ -182,7 +177,6 @@ map <leader>tm :tabmove
 map <leader><Right> :tabnext<cr><Esc>
 map <leader><Left> :tabprevious<cr><Esc>
 
-
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -194,7 +188,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
-
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
@@ -208,7 +201,6 @@ if has("mac") || has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
-
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
@@ -287,7 +279,6 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
-
 " ipdb debug shortcut
 ab ipdb import ipdb; ipdb.set_trace()
 
@@ -320,7 +311,6 @@ au FileType python set cindent
 au FileType python set cinkeys-=0#
 au FileType python set indentkeys-=0#
 
-
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
@@ -345,7 +335,6 @@ function! JavaScriptFold()
     setl foldtext=FoldText()
 endfunction
 
-
 """"""""""""""""""""""""""""""
 " => Shell section
 """"""""""""""""""""""""""""""
@@ -357,12 +346,10 @@ if exists('$TMUX')
     endif
 endif
 
-
 """"""""""""""""""""""""""""""
 " => Twig section
 """"""""""""""""""""""""""""""
 autocmd BufRead *.twig set syntax=html filetype=html
-
 
 """"""""""""""""""""""""""""""
 " => Nerd Tree
@@ -378,7 +365,6 @@ map <leader>nf :NERDTreeFind<cr>
 autocmd VimEnter * NERDTree
 " Jump to the main window.
 autocmd VimEnter * wincmd p
-
 
 function! CustomizedTabLine()
     let s = ''
@@ -411,8 +397,6 @@ endfunction
 set stal=2
 set tabline=%!CustomizedTabLine()
 
-
-
 """"""""""""""""""""""""""""""
 " => CtrlP
 """"""""""""""""""""""""""""""
@@ -426,12 +410,10 @@ let g:ctrlp_max_depth=40
 let g:ctrlp_working_path_mode=''
 let g:ctrlp_open_new_file = 't'
 
-
 """"""""""""""""""""""""""""""
 " => Tagbar
 """"""""""""""""""""""""""""""
 map <leader>b :TagbarToggle<CR>
-
 
 """"""""""""""""""""""""""""""
 " => Syntastic
@@ -446,7 +428,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 
-
 """"""""""""""""""""""""""""""
 " => Gitgutter
 """"""""""""""""""""""""""""""
@@ -458,7 +439,6 @@ hi SignColumn guibg=NONE
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_max_signs = 800
 
-
 """"""""""""""""""""""""""""""
 " => Ack!
 """"""""""""""""""""""""""""""
@@ -466,7 +446,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 noreabbrev Ack Ack!
-
 
 """"""""""""""""""""""""""""""
 " => IndentLine
