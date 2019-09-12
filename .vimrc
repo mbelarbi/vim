@@ -11,7 +11,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
 Plugin 'webdevel/tabulous'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
